@@ -529,8 +529,8 @@ function init() { // only run this once
 init();
 
 function pps() {
-  $("pps").innerHTML = "You are getting " + Math.floor((((game.clickers/33)*game.genMult*game.timePlayedMult*game.yMult)**game.srNerf)+(((game.factories/3.3)*game.genMult*game.timePlayedMult*game.yMult)**game.srNerf)+
-  (((game.portals*30.303)*game.genMult*game.timePlayedMult*game.ppMult*game.yMult)**game.srNerf))*33 + " points per second";
+  $("#pps").innerHTML = "You are getting " + Math.floor(((((game.clickers / 33) * game.genMult * game.timePlayedMult * game.yMult) ** game.srNerf) + (((game.factories / 3.3) * game.genMult * game.timePlayedMult * game.yMult) ** game.srNerf) +
+    (((game.portals * 30.303) * game.genMult * game.timePlayedMult * game.ppMult * game.yMult) ** game.srNerf)) * 33) + " points per second";
 }
 
 var mainGameLoop = window.setInterval(function() { // runs the loop
