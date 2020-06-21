@@ -1,0 +1,16 @@
+:root {
+  --textColor: #000000;
+}
+
+
+
+body {
+  font-family: helvetica;
+}
+
+
+
+.generator {
+  border-bottom: 1px solid var(--textColor);
+  border-right: 1px solid var(--textColor);
+}

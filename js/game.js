@@ -393,6 +393,30 @@ function epicenter() {
 
 function init() { // only run this once 
   // don't change this stuff unless you know what you're doing
+  if(Math.random() > 0.95){
+    let easteregg = Math.random();
+    if(easteregg >= 0 && easteregg <= 0.1){
+      document.title = "Algebraic Depression"; 
+    }else if (easteregg >= 0.1 && easteregg <= 0.2){
+      document.title = "Algebraic Progession NG+++";
+    }else if (easteregg >= 0.2 && easteregg <= 0.3){
+      document.title = "Antimatter Dimensions";
+    }else if (easteregg >= 0.3 && easteregg <= 0.4){
+      document.title = "Stop forcing me!";
+    }else if (easteregg >= 0.4 && easteregg <= 0.5){
+      document.title = "Ordinal Markup";
+    }else if (easteregg >= 0.5 && easteregg <= 0.6){
+      document.title = "Reinhardt's House";
+    }else if (easteregg >= 0.6 && easteregg <= 0.7){
+      document.title = "FIX THE NEWS TICKER";
+    }else if (easteregg >= 0.7 && easteregg <= 0.8){
+      document.title = "A̸l̵g̶e̴b̶r̶a̶i̷c̷ ̷P̵r̷o̸g̴r̸e̵s̶s̴i̴o̷n̷";
+    }else if (easteregg >= 0.8 && easteregg <= 0.9){
+      document.title = "Algebraic Maintenance";
+    }else if (easteregg >= 0.9 && easteregg <= 1){
+      document.title = "Just Monika";
+    }
+  }
   hideElement("xButton");
   hideElement("upgrades");
   hideElement("resetButton");
@@ -436,7 +460,7 @@ function init() { // only run this once
   }
   
   if(game.srNerf === 0.5){
-    $("srootButton").innerHTML = "You are currently in Square Root.";
+    $("srootButton").innerHTML = "Exit Square Root.";
   }
   
   if(game.resetUnlocked === 1){
@@ -529,8 +553,8 @@ function init() { // only run this once
 init();
 
 function pps() {
-  $("pps").innerHTML = "You are getting " + Math.floor(((((game.clickers / 33) * game.genMult * game.timePlayedMult * game.yMult) ** game.srNerf) + (((game.factories / 3.3) * game.genMult * game.timePlayedMult * game.yMult) ** game.srNerf) +
-    (((game.portals * 30.303) * game.genMult * game.timePlayedMult * game.ppMult * game.yMult) ** game.srNerf)) * 33) + " points per second";
+  $("pps").innerHTML = "You are getting " + Math.floor((((game.clickers/33)*game.genMult*game.timePlayedMult*game.yMult)**game.srNerf)+(((game.factories/3.3)*game.genMult*game.timePlayedMult*game.yMult)**game.srNerf)+
+  (((game.portals*30.303)*game.genMult*game.timePlayedMult*game.ppMult*game.yMult)**game.srNerf))*33 + " points per second";
 }
 
 var mainGameLoop = window.setInterval(function() { // runs the loop
@@ -563,7 +587,7 @@ function loop() { // don't change this stuff unless you know what you're doing
   if(game.cost3 > game.points){$("portalButton").className = "buildingLocked";}else{$("portalButton").className = "buildingButton";}
   game.points += ((game.clickers/33)*game.genMult*game.timePlayedMult*game.yMult)**game.srNerf;
   game.points += ((game.factories/3.3)*game.genMult*game.timePlayedMult*game.yMult)**game.srNerf;
-  game.points += ((game.portals*30.303)*game.genMult*game.timePlayedMult*game.ppMult*game.yMult)**game.srNerf;
+  game.points += ((game.portals*33.333)*game.genMult*game.timePlayedMult*game.ppMult*game.yMult)**game.srNerf;
   if(game.ret != 3){
     game.x += (game.xPerMin/1980);
   }
@@ -571,19 +595,18 @@ function loop() { // don't change this stuff unless you know what you're doing
   pps();
   if(game.srNerf >= 1){
     if(game.rtu31 === 1){
-      if(game.srNerf < 1){
-        $("resetButton").innerHTML = "Reset for " + Math.floor((game.y+(game.x/100))*Math.log((game.y+(game.x/100))))*game.reMult + " root essence";
-      }else{
-        $("resetButton").innerHTML = "Reset for " + Math.floor((game.y+(game.x/100))*Math.log((game.y+(game.x/100)))*((game.msCompleted/2)+1)) + " reset points";
-      }
+      $("resetButton").innerHTML = "Reset for " + Math.floor((game.y+(game.x/100))*Math.log((game.y+(game.x/100)))*((game.msCompleted/2)+1)) + " reset points";
+    }else{
+      $("resetButton").innerHTML = "Reset for " + Math.floor(game.y+(game.x/100)*((game.msCompleted/2)+1)) + " reset points";
+    }
   }else{
-      if(game.srNerf < 1){
+      if(game.rtu31 === 1){
         $("resetButton").innerHTML = "Reset for " + Math.floor(game.y+(game.x/100))*game.reMult + " root essence";
       }else{
-        $("resetButton").innerHTML = "Reset for " + Math.floor(game.y+(game.x/100)*((game.msCompleted/2)+1)) + " reset points";
+        $("resetButton").innerHTML = "Reset for " + Math.floor(game.y+(game.x/100)*Math.log((game.y+(game.x/100))))*game.reMult + " root essence";
       }
   }
-  if(game.points > 99999){
+    if(game.points > 99999){
     game.visible = 1;
   }
   if(game.resetUnlocked === 1){
@@ -630,7 +653,6 @@ function loop() { // don't change this stuff unless you know what you're doing
       game.msCompleted += 1;
       $("sroot").innerHTML = "You have " + game.rootEssence + " root essence. <br> The next milestone is " + game.milestone + " root essence."
   }
-}
 }
 
 function buyClicker() { // buy autoclicker function
@@ -970,75 +992,32 @@ function changeTheme(theme) { // theme change function
   }
 }
 
-function reset() { // reset function
-  if(game.srNerf < 1){
-    showElement("resetPoints");
-    showElement("br");
-    showElement("resetting");
-    hideElement("resetButton");
-    if(game.rtu31 === 1){
-      // this formula is confusing vvv
-      game.rootEssence += Math.floor((game.y+(game.x/100))*Math.log((game.y+(game.x/100))))*game.reMult;
-    }else{
-      game.rootEssence += Math.floor(game.y+(game.x/100))*game.reMult;
-    }
-    if(game.rootEssence >= game.milestone){
+function check() {
+  if(game.rootEssence >= game.milestone){
       game.milestone *= game.scaling2;
       game.milestone = Math.floor(game.milestone);
       game.msCompleted += 1;
-      $("sroot").innerHTML = "You have " + game.rootEssence + " root essence. <br> The next milestone is " + game.milestone + " root essence."
+      if(game.rootEssence >= game.milestone){
+        check();
+      }
     }
-    $("sroot").innerHTML = "You have " + game.rootEssence + " root essence. <br> The next milestone is " + game.milestone + " root essence."
-    $("srootButton").innerHTML = "Enter Square Root."
-    game.points = 0;
-    game.clickers = 0;
-    game.factories = 0;
-    game.portals = 0;
-    game.cost1 = 25;
-    game.cost2 = 200;
-    game.cost3 = 15000;
-    game.x = 0;
-    game.y = 0;
-    game.xCost = 100000;
-    game.yCost = 100;
-    game.tickpart = 0;
-    game.tickspeed = 50;
-    if(game.rtu22 === 0){
-      game.scaling = 1.1;
-      game.genMult = 1;
-      game.thicc = 0;
-      game.haveUpg2 = 0
-    }else if(game.rtu22 === 1){
-      game.genMult = 3;
-      game.haveUpg2 = 1
-    }
-    game.visible = 0;
-    game.multCost = 50;
-    $("multButton").className = "multButton";
-    $("clickerButton").innerHTML = "Buy for " + game.cost1 + " points";
-    $("clickers").innerHTML = "Autoclickers: " + game.clickers;
-    $("factoryButton").innerHTML = "Buy for " + game.cost2 + " points";
-    $("factories").innerHTML = "Point Factories: " + game.factories;
-    $("portalButton").innerHTML = "Buy for " + game.cost3 + " points";
-    $("portals").innerHTML = "Point Portals: " + game.portals;
-    $("xButton").innerHTML = "Get an x for " + game.xCost + " points";
-    $("yButton").innerHTML = "Get a y for " + game.yCost + "x";
-    $("multText").innerHTML = "Current generator multiplier: 3x";
-    $("multButton").innerHTML = "Upgrade mutliplier for " + game.multCost + "x";
-    generation();
-    game.srNerf = 1;
-  }else{
+}
+
+function reset() { // reset function
+  if(game.srNerf >= 1){
     showElement("resetPoints");
     showElement("br");
     showElement("resetting");
     hideElement("resetButton");
     if(game.rtu31 === 1){
-      game.resetPoints += Math.floor((game.y+(game.x/100))*Math.log((game.y+(game.x/100)))*((game.msCompleted/2)+1));
+      game.resetPoints += Math.floor(game.y+(game.x/100))*Math.log((game.y+(game.x/100)))*((game.msCompleted/2)+1);
+      game.resetPoints = Math.floor(game.resetPoints);
     }else{
-      game.resetPoints += Math.floor(game.y+(game.x/100)*((game.msCompleted/2)+1));
+      game.resetPoints += Math.floor(game.y+(game.x/100))*((game.msCompleted/2)+1);
+      game.resetPoints = Math.floor(game.resetPoints);
     }
     $("resetPoints").innerHTML = "Reset Points: " + game.resetPoints;
-    game.points = 0;
+    game.points = 25;
     game.clickers = 0;
     game.factories = 0;
     game.portals = 0;
@@ -1073,6 +1052,56 @@ function reset() { // reset function
     $("multText").innerHTML = "Current generator multiplier: 3x";
     $("multButton").innerHTML = "Upgrade mutliplier for " + game.multCost + "x";
     generation();
+  }else{ // the split
+    showElement("resetPoints");
+    showElement("br");
+    showElement("resetting");
+    hideElement("resetButton");
+    if(game.rtu31 === 1){
+      game.rootEssence += Math.floor((game.y+(game.x/100))*Math.log((game.y+(game.x/100))))*game.reMult;
+      game.rootEssence = Math.floor(game.rootEssence);
+    }else{
+      game.rootEssence += Math.floor(game.y+(game.x/100))*game.reMult;
+      game.rootEssence = Math.floor(game.rootEssence);
+    }
+    check();
+    $("sroot").innerHTML = "You have " + game.rootEssence + " root essence. <br> The next milestone is " + game.milestone + " root essence.";
+    game.points = 25;
+    game.clickers = 0;
+    game.factories = 0;
+    game.portals = 0;
+    game.cost1 = 25;
+    game.cost2 = 200;
+    game.cost3 = 15000;
+    game.x = 0;
+    game.y = 0;
+    game.xCost = 100000;
+    game.yCost = 100;
+    game.tickpart = 0;
+    game.tickspeed = 50;
+    if(game.rtu22 === 0){
+      game.scaling = 1.1;
+      game.genMult = 1;
+      game.thicc = 0;
+    }else if(game.rtu22 === 1){
+      game.genMult = 3;
+      game.xCost = 50000;
+    }
+    game.visible = 0;
+    game.multCost = 50;
+    $("multButton").className = "multButton";
+    $("clickerButton").innerHTML = "Buy for " + game.cost1 + " points";
+    $("clickers").innerHTML = "Autoclickers: " + game.clickers;
+    $("factoryButton").innerHTML = "Buy for " + game.cost2 + " points";
+    $("factories").innerHTML = "Point Factories: " + game.factories;
+    $("portalButton").innerHTML = "Buy for " + game.cost3 + " points";
+    $("portals").innerHTML = "Point Portals: " + game.portals;
+    $("xButton").innerHTML = "Get an x for " + game.xCost + " points";
+    $("yButton").innerHTML = "Get a y for " + game.yCost + "x";
+    $("multText").innerHTML = "Current generator multiplier: 3x";
+    $("multButton").innerHTML = "Upgrade mutliplier for " + game.multCost + "x";
+    generation();
+    game.srNerf = 1;
   }
 }
 
@@ -1119,12 +1148,11 @@ function toggleAutomation(id){
 
 function enter() {
   if(game.srNerf === 1){
-    $("srootButton").innerHTML = "You are currently in Square Root."
+    $("srootButton").innerHTML = "Exit Square Root."
     reset();
     game.srNerf = 0.5;
   }else{
     $("srootButton").innerHTML = "Enter Square Root."
-    reset();
     game.srNerf = 1;
   }
 }
@@ -1144,7 +1172,7 @@ function srootUpg2() {
     game.rootEssence = 0;
     game.milestone = 10;
     game.msCompleted = 0;
-    game.scaling2 -= 0.05;
+    game.scaling2 -= 0.1;
     game.sru2 *= 3;
     $("srootUpg2").innerHTML = "Make the milestone scaling slower, but reset root essence <br> Cost: " + game.sru2 + " root essence";
     $("sroot").innerHTML = "You have " + game.rootEssence + " root essence. <br> The next milestone is " + Math.floor(game.milestone) + " root essence.";
