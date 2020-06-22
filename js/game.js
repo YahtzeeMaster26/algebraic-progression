@@ -132,6 +132,13 @@ function convertToY () { // buy y function
   }
 }
 
+function getRootEssenceGain() {
+  return Math.floor((game.y+(game.x/100))*Math.log((game.y+(game.x/100))))*game.reMult
+  return (game.rtu31 === 1) ? 
+    Math.floor((game.y+(game.x/100))*Math.log((game.y+(game.x/100))))*game.reMult : 
+    Math.floor(game.y+(game.x/100))*game.reMult
+}
+
 // tab functions
 function generation() { 
   showElement("clickers");
@@ -600,11 +607,7 @@ function loop() { // don't change this stuff unless you know what you're doing
       $("resetButton").innerHTML = "Reset for " + Math.floor(game.y+(game.x/100)*((game.msCompleted/2)+1)) + " reset points";
     }
   }else{
-      if(game.rtu31 === 1){
-        $("resetButton").innerHTML = "Reset for " + Math.floor(game.y+(game.x/100))*game.reMult + " root essence";
-      }else{
-        $("resetButton").innerHTML = "Reset for " + Math.floor(game.y+(game.x/100)*Math.log((game.y+(game.x/100))))*game.reMult + " root essence";
-      }
+      $("resetButton").innerHTML = "Reset for " + getRootEssenceGain() + " root essence"
   }
     if(game.points > 99999){
     game.visible = 1;
@@ -1058,7 +1061,7 @@ function reset() { // reset function
     showElement("resetting");
     hideElement("resetButton");
     if(game.rtu31 === 1){
-      game.rootEssence += Math.floor((game.y+(game.x/100))*Math.log((game.y+(game.x/100))))*game.reMult;
+      game.rootEssence += getRootEssenceGain()
       game.rootEssence = Math.floor(game.rootEssence);
     }else{
       game.rootEssence += Math.floor(game.y+(game.x/100))*game.reMult;
