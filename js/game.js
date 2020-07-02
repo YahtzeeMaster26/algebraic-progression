@@ -133,7 +133,6 @@ function convertToY () { // buy y function
 }
 
 function getRootEssenceGain() {
-  return Math.floor((game.y+(game.x/100))*Math.log((game.y+(game.x/100))))*game.reMult
   return (game.rtu31 === 1) ? 
     Math.floor((game.y+(game.x/100))*Math.log((game.y+(game.x/100))))*game.reMult : 
     Math.floor(game.y+(game.x/100))*game.reMult
