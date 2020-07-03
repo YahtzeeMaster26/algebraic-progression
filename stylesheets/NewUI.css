@@ -240,3 +240,22 @@ button {
 .building {
   color: white;
 }
+
+.options {
+  transition-duration: 0.2s
+}
+
+.options:hover {
+  background-color: gray;
+  color: white;
+}
+
+.xButton:hover {
+  background-color: purple;
+  font-size: 18px;
+}
+
+.yButton:hover {
+  background-color: green;
+  font-size: 18px;
+}
