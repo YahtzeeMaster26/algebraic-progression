@@ -181,6 +181,7 @@ function generation() {
   Array.from(c("sroot")).forEach(element => element.style.display = "none");
   hideElement("sroot");
   Array.from(c("epicenter")).forEach(element => element.style.display = "none");
+  hideElement("sroot2");
 }
 
 function upgrades() {
@@ -215,6 +216,7 @@ function upgrades() {
   Array.from(c("sroot")).forEach(element => element.style.display = "none");
   hideElement("sroot");
   Array.from(c("epicenter")).forEach(element => element.style.display = "none");
+  hideElement("sroot2");
   game.visible = 0;
 }
 
@@ -240,6 +242,7 @@ function options() {
   Array.from(c("sroot")).forEach(element => element.style.display = "none");
   hideElement("sroot");
   Array.from(c("epicenter")).forEach(element => element.style.display = "none");
+  hideElement("sroot2");
   game.visible = 0;
 }
 
@@ -265,6 +268,7 @@ function achievements() {
   Array.from(c("sroot")).forEach(element => element.style.display = "none");
   hideElement("sroot");
   Array.from(c("epicenter")).forEach(element => element.style.display = "none");
+  hideElement("sroot2");
   game.visible = 0;
 }
 
@@ -290,6 +294,7 @@ function automation() {
   Array.from(c("sroot")).forEach(element => element.style.display = "none");
   hideElement("sroot");
   Array.from(c("epicenter")).forEach(element => element.style.display = "none");
+  hideElement("sroot2");
   game.visible = 0;
 }
 
@@ -323,6 +328,7 @@ function resetting() {
   Array.from(c("options")).forEach(element => element.style.display = "none");
   Array.from(c("sroot")).forEach(element => element.style.display = "none");
   Array.from(c("epicenter")).forEach(element => element.style.display = "none");
+  hideElement("sroot2");
   hideElement("sroot");
 }
 
@@ -346,11 +352,13 @@ function cplane() {
   Array.from(c("options")).forEach(element => element.style.display = "none");
   Array.from(c("sroot")).forEach(element => element.style.display = "none");
   Array.from(c("epicenter")).forEach(element => element.style.display = "none");
+  hideElement("sroot2");
   hideElement("sroot");
 }
 
 function sroot() {
   Array.from(c("sroot")).forEach(element => element.style.display = "inline");
+  showElement("sroot2");
   showElement("sroot");
   Array.from(c("automation")).forEach(element => element.style.display = "none");
   hideElement("objectives");
