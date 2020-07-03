@@ -278,11 +278,16 @@ button {
 }
 
 .xButton:hover {
-  background-color: purple;
-  font-size: 18px;
+  background-color: black;
+  color: gray;
 }
 
 .yButton:hover {
   background-color: green;
   font-size: 18px;
+}
+
+#credits:hover {
+  background-color: none;
+  color: black;
 }
