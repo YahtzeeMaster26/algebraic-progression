@@ -218,6 +218,11 @@ button {
   transition-duration: 0.2s
 }
 
+#credits:hover {
+  background-color: none;
+  color: black;
+}
+
 .sroot:hover {
   background-color: green;
   color: white;
