@@ -80,7 +80,7 @@ function showElement(element) { // shows element
 function hideElement(element) { // hides element
   $(element).style.display = "none";
 }
-
+hideElement("sroot2");
 function convertNumber() { // very important, used for displaying number
   if(game.x < 1 && game.y < 1) {
     $("number").innerHTML = "Number = " + Math.floor(game.points);
