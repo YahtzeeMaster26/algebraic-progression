@@ -45,6 +45,7 @@ h1 {
 .xButton {
   background-color: #FF00FF;
   font-size: 18px;
+  transition-duration: 0.2s;
 }
 
 .upgradeButton {
@@ -56,6 +57,7 @@ h1 {
 .yButton {
   background-color: #00FF00;
   font-size: 18px;
+  transition-duration: 0.2s;
 }
 
 .mult {
@@ -221,4 +223,23 @@ button {
 .pps {
   color: gray;
   font-size: 12px;
+}
+
+.options {
+  transition-duration: 0.2s
+}
+
+.options:hover {
+  background-color: gray;
+  color: white;
+}
+
+.xButton:hover {
+  background-color: purple;
+  font-size: 18px;
+}
+
+.yButton:hover {
+  background-color: green;
+  font-size: 18px;
 }
