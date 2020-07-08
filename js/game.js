@@ -411,24 +411,44 @@ function init() { // only run this once
     let easteregg = Math.random();
     if(easteregg >= 0 && easteregg <= 0.1){
       document.title = "Algebraic Depression"; 
-    }else if (easteregg >= 0.1 && easteregg <= 0.2){
+    }else if (easteregg >= 0.05 && easteregg <= 0.1){
       document.title = "Algebraic Progession NG+++";
-    }else if (easteregg >= 0.2 && easteregg <= 0.3){
+    }else if (easteregg >= 0.1 && easteregg <= 0.15){
       document.title = "Antimatter Dimensions";
-    }else if (easteregg >= 0.3 && easteregg <= 0.4){
+    }else if (easteregg >= 0.15 && easteregg <= 0.2){
       document.title = "Stop forcing me!";
-    }else if (easteregg >= 0.4 && easteregg <= 0.5){
+    }else if (easteregg >= 0.2 && easteregg <= 0.25){
       document.title = "Ordinal Markup";
-    }else if (easteregg >= 0.5 && easteregg <= 0.6){
+    }else if (easteregg >= 0.25 && easteregg <= 0.3){
       document.title = "Reinhardt's House";
-    }else if (easteregg >= 0.6 && easteregg <= 0.7){
+    }else if (easteregg >= 0.3 && easteregg <= 0.35){
       document.title = "FIX THE NEWS TICKER";
-    }else if (easteregg >= 0.7 && easteregg <= 0.8){
+    }else if (easteregg >= 0.35 && easteregg <= 0.4){
       document.title = "A̸l̵g̶e̴b̶r̶a̶i̷c̷ ̷P̵r̷o̸g̴r̸e̵s̶s̴i̴o̷n̷";
-    }else if (easteregg >= 0.8 && easteregg <= 0.9){
+    }else if (easteregg >= 0.4 && easteregg <= 0.45){
       document.title = "Algebraic Maintenance";
-    }else if (easteregg >= 0.9 && easteregg <= 1){
+    }else if (easteregg >= 0.45 && easteregg <= 0.5){
       document.title = "Just Monika";
+    }else if (easteregg >= 0.5 && easteregg <= 0.55){
+      document.title = "Aggression Borleg";
+    }else if (easteregg >= 0.55 && easteregg <= 0.6){
+      document.title = "Where's Z?";
+    }else if (easteregg >= 0.6 && easteregg <= 0.65){
+      document.title = "Hey, Random! Tuba here.";
+    }else if (easteregg >= 0.65 && easteregg <= 0.7){
+      document.title = "Algebraic 1-day completion";
+    }else if (easteregg >= 0.7 && easteregg <= 0.75){
+      document.title = "Fix it MKey";
+    }else if (easteregg >= 0.75 && easteregg <= 0.8){
+      document.title = "Cookie Clicker Respecced - 0 cookies";
+    }else if (easteregg >= 0.8 && easteregg <= 0.85){
+      document.title = "It's not just a cookie clicker clone";
+    }else if (easteregg >= 0.85 && easteregg <= 0.9){
+      document.title = "Geometric Progression";
+    }else if (easteregg >= 0.9 && easteregg <= 0.95){
+      document.title = "Hamborger";
+    }else if (easteregg >= 0.95 && easteregg <= 1){
+      document.title = "You have a 1/400 chance to get this secret title...I think";
     }
   }
   hideElement("xButton");
@@ -581,6 +601,9 @@ var mainGameLoop = window.setInterval(function() { // runs the loop
 
 function loop() { // don't change this stuff unless you know what you're doing
   game.timePlayed += 0.033;
+  if(game.y >= 100){
+    document.title = "You fucking madlad";
+  }
   if(game.rtu11 === 1 && game.timePlayed >= 1){
     game.timePlayedMult = Math.log10(game.timePlayed)*Math.pow(game.rtu41+1,3);
   }else{
