@@ -582,17 +582,17 @@ var mainGameLoop = window.setInterval(function() { // runs the loop
 function loop() { // don't change this stuff unless you know what you're doing
   game.timePlayed += 0.033;
   if(game.rtu11 === 1 && game.timePlayed >= 1){
-    game.timePlayedMult = Math.log(game.timePlayed)*Math.pow(game.rtu41+1,3);
+    game.timePlayedMult = Math.log10(game.timePlayed)*Math.pow(game.rtu41+1,3);
   }else{
     game.timePlayedMult = 1;
   }
   if(game.rtu12 === 1 && game.clickers >= 1){
-    game.ppMult = Math.log(game.clickers);
+    game.ppMult = Math.log10(game.clickers);
   }else{
     game.ppMult = 1;
   }
   if(game.rtu33 === 1 && game.y >= 2){
-    game.yMult = Math.log(game.y)*Math.pow(game.rtu41+1,3);
+    game.yMult = Math.log10(game.y)*Math.pow(game.rtu41+1,3);
   }else{
     game.yMult = 1;
   }
