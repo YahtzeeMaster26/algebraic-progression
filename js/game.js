@@ -625,9 +625,6 @@ function loop() { // don't change this stuff unless you know what you're doing
   game.points += ((game.clickers/33)*game.genMult*game.timePlayedMult*game.yMult)**game.srNerf;
   game.points += ((game.factories/3.3)*game.genMult*game.timePlayedMult*game.yMult)**game.srNerf;
   game.points += ((game.portals*33.333)*game.genMult*game.timePlayedMult*game.ppMult*game.yMult)**game.srNerf;
-  $("rtu11").innerHTML = "Generators gain a multiplier based on time played <br> Cost: 2 Reset Points <br> Currently: " + Math.round(timePlayedMult*100)/100 + "x";
-  $("rtu12").innerHTML = "Point Portals gain a multiplier based on Autoclickers <br> Cost: 4 Reset Points <br> Currently: " + Math.round(ppMult*100)/100 + "x";
-  $("rtu33").innerHTML = "Generators gain a multiplier based on y's <br> Cost: 180 Reset Points <br> Currently: " + Math.round(yMult*100)/100 + "x";
   if(game.ret != 3){
     game.x += (game.xPerMin/1980);
   }
